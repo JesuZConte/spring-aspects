@@ -1,12 +1,12 @@
 package com.frankmoley.lil.fid.config;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 
 @Configuration
-@PropertySource("classpath:application.properties")
+@PropertySources({
+        @PropertySource("classpath:application.properties"),
+        @PropertySource("classpath:log4j.properties")
+})
 @ComponentScan(basePackages = "com.frankmoley.lil.fid")
 @EnableAspectJAutoProxy
 public class ApplicationConfig {
